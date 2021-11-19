@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz Game</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+
+  <body>
+    <!-- Quiz Rules/Info -->
+    <div class="container" id="rules-container">
+      <div class="rules-title" id="quiz-title">
+        <span>Coding Quiz Challenge</span>
+
+        <div class="rules-list">
+          <ul>
+            <li>
+              1. Please try to answer all of the coding questions within the
+              time limit.
+            </li>
+            <li>2. A timer will start when you press the Start Quiz button.</li>
+            <li>
+              3. When you answer a question incorrectly, you will be penalized
+              by having 10 seconds subtracted from the clock.
+            </li>
+            <li>
+              4. When all questions are answered or the timer reaches 0, the
+              quiz will be over.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Start Quiz Button -->
+        <div class="buttons"></div>
+        <button class="start">Start Quiz</button>
+
+        <div class="buttons">
+          <button class="quit">Exit Quiz</button>
+          <button class="restart">Continue</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Quiz Questions -->
+    <div class="container" id="questions-container">
+      <header>
+        <div class="timer">
+          <div class="timer-text">Time Left</div>
+          <div class="timer-value">60</div>
+        </div>
+      </header>
+
+      <section>
+        <div class="question-text">
+          <span id="question">What does API stand for?</span>
+        </div>
+        <div class="choices-list">
+          <ol id="answers"></ol>
+        </div>
+      </section>
+    </div>
+
+    <!-- Results Container -->
+    <div class="container" id="results-container">
+      <div class="gameover-text">You finished the Quiz!</div>
+      <span class="score-text"
+        >Your score is
+        <p>""</p>
+        out of
+        <p>""</p></span
+      >
+
+      <div class="buttons">
+        <button class="restart">Retake Quiz</button>
+        <button class="leavet">Exit Quiz</button>
+      </div>
+    </div>
+
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

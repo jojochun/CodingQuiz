@@ -1,0 +1,46 @@
+:root {
+  background-color: rgb(43, 83, 116);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  color: white;
+}
+.container {
+  width: 100vw;
+  height: 100vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.rules-title {
+  display: flex;
+  flex-direction: column;
+}
+.rules-list {
+  font-size: 1.4rem;
+}
+span {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.rules-list ul li {
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.start {
+  font-size: 2rem;
+}
