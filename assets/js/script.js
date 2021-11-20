@@ -86,33 +86,66 @@ var questions = [{
     correctAnswer: "Infinite loop"
 }]
 
+var timer = questions.length*20;
+
+
+
+
 
 // create and display questions
 // function that tells us which question we're on
 var questionNumber = 0
+var timerCountdown = document.getElementById("time")
+var startScreen = document.getElementById("rules-container")
+
+
+
+function startQuiz() {
+    console.log("started")
+    startScreen.setAttribute("class", "hide")
+
+    // var timer = setInterval(function clock() {
+    //     document.getElementById("countdown").innerHTML = timeleft + "" +"seconds remaining";
+
+    //     timeleft -= 1;
+    //     if (timeleft <=0) {
+    //         clearInterval(timer);
+    //         document.getElementById("countdown").innerHTML = "Time is up!"
+    //     }
+    // }, 1000);
+   
+};
 function updateQuestion() {
     //the questions array object
      var currentQuestion = questions[questionNumber]
      var questionEl = document.querySelector("#question");
      questionEl.textContent = currentQuestion.question
-     var answerEl = document.querySelector("#answers");
+     
 
      //for loop answers on screen
+     var answerEl = document.querySelector("#answers");
      for (var i = 0; i < currentQuestion.answers.length; i++){
          var liEl = document.createElement("li");
          var buttonEl = document.createElement("button");
          buttonEl.textContent = currentQuestion.answers[i]
+         // add button class
          liEl.append(buttonEl)
          answerEl.append(liEl)
      }
 }
 
 //create timer, needs to start on button click, ends with finishing quiz or timer runs out
+var startButton = document.querySelector("#start-btn")
+
 
 
 // get user info and check it or validate if correct
 
 // progress thru questions, conditionals. get score and store in localStorage
-
-
 updateQuestion()
+
+
+
+
+
+startButton.addEventListener("click", startQuiz)

@@ -10,74 +10,74 @@
 
   <body>
     <!-- Quiz Rules/Info -->
-    <div class="container" id="rules-container">
-      <div class="rules-title" id="quiz-title">
+    <div class="container">
+
+      <header>
+        <div class="timer">
+          <div class="timer-text">Time Left: <span id="time">0</span></div>
+        
+          <div class="countdown"></div>
+        </div>
+      </header>
+      <div class="container" id="rules-container">
         <span>Coding Quiz Challenge</span>
 
         <div class="rules-list">
           <ul>
             <li>
-              1. Please try to answer all of the coding questions within the
-              time limit.
+              Try to answer all of the coding questions within the time limit.
             </li>
-            <li>2. A timer will start when you press the Start Quiz button.</li>
+            <li>A timer will start when you press the Start Quiz button.</li>
             <li>
-              3. When you answer a question incorrectly, you will be penalized
-              by having 10 seconds subtracted from the clock.
+              When you answer a question incorrectly, you will be penalized by
+              having 10 seconds subtracted from the clock.
             </li>
             <li>
-              4. When all questions are answered or the timer reaches 0, the
-              quiz will be over.
+              When all questions are answered or the timer reaches 0, the quiz
+              will be over.
             </li>
           </ul>
         </div>
 
         <!-- Start Quiz Button -->
-        <div class="buttons"></div>
-        <button class="start">Start Quiz</button>
+        <div class="controls">
+          <button class="hide" id="start-btn">Start Quiz</button>
+        </div>
+      </div>
+
+      <!-- Quiz Questions -->
+      <div class="quiz-container hide" id="questions-container">
+        <div>
+        
+
+        <section>
+          <div class="question-text hide">
+            <span id="question">What does API stand for?</span>
+          </div>
+          <div class="choices-list">
+            <ol id="answers"></ol>
+          </div>
+         
+        </div>
+        </section>
+      </div>
+
+      <!-- Results Container -->
+      <div class="container hide" id="results-container">
+        <div class="gameover-text">You finished the Quiz!</div>
+        <span class="score-text"
+          >Your score is
+          <p>""</p>
+          out of
+          <p>""</p></span
+        >
 
         <div class="buttons">
-          <button class="quit">Exit Quiz</button>
-          <button class="restart">Continue</button>
+          <button class="restart">Retake Quiz</button>
+          <button class="leavet">Exit Quiz</button>
         </div>
       </div>
     </div>
-
-    <!-- Quiz Questions -->
-    <div class="container" id="questions-container">
-      <header>
-        <div class="timer">
-          <div class="timer-text">Time Left</div>
-          <div class="timer-value">60</div>
-        </div>
-      </header>
-
-      <section>
-        <div class="question-text">
-          <span id="question">What does API stand for?</span>
-        </div>
-        <div class="choices-list">
-          <ol id="answers"></ol>
-        </div>
-      </section>
-    </div>
-
-    <!-- Results Container -->
-    <div class="container" id="results-container">
-      <div class="gameover-text">You finished the Quiz!</div>
-      <span class="score-text"
-        >Your score is
-        <p>""</p>
-        out of
-        <p>""</p></span
-      >
-
-      <div class="buttons">
-        <button class="restart">Retake Quiz</button>
-        <button class="leavet">Exit Quiz</button>
-      </div>
-    </div>
-
     <script src="./assets/js/script.js"></script>
   </body>
 </html>
