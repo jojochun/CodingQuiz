@@ -13,6 +13,7 @@
     <div class="container">
 
       <header>
+         <!-- add to high score page -->
         <div class="timer">
           <div class="timer-text">Time Left: <span id="time">0</span></div>
         
@@ -51,11 +52,11 @@
         
 
         <section>
-          <div class="question-text hide">
-            <span id="question">What does API stand for?</span>
+          <div class="hide" id="question">
+            <span ></span>
           </div>
-          <div class="choices-list">
-            <ol id="answers"></ol>
+          <div class="choices-list" id="answers">
+            
           </div>
          
         </div>
@@ -63,20 +64,22 @@
       </div>
 
       <!-- Results Container -->
-      <div class="container hide" id="results-container">
+      <div class="hide" id="results-container">
         <div class="gameover-text">You finished the Quiz!</div>
-        <span class="score-text"
+        <p class="score-text"
           >Your score is
-          <p>""</p>
-          out of
-          <p>""</p></span
-        >
+          <span id="score"></span>
+      
+          </p>
 
-        <div class="buttons">
-          <button class="restart">Retake Quiz</button>
-          <button class="leavet">Exit Quiz</button>
-        </div>
+          <p>Initials here: <input type="text" id="initials-input" max="4"><button id="submit">Submit</button></p>
+
       </div>
+
+      <div class="hide" id="check-answer">
+
+      </div>
+
     </div>
     <script src="./assets/js/script.js"></script>
   </body>

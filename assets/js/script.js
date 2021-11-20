@@ -85,7 +85,8 @@ var questions = [{
     answers: ["Infinite loop", "Forever loop", "While loop","Nonstop loop"],
     correctAnswer: "Infinite loop"
 }]
-
+//Setting temporary timer
+//var timer = 1
 var timer = questions.length*20;
 
 
@@ -95,32 +96,48 @@ var timer = questions.length*20;
 // create and display questions
 // function that tells us which question we're on
 var questionNumber = 0
+var timerId 
 var timerCountdown = document.getElementById("time")
 var startScreen = document.getElementById("rules-container")
+var questionEl = document.querySelector("#question")
+var endScreen = document.getElementById("results-container")
+var answerList = document.getElementById("answers")
+var answerStatus = document.getElementById("check-answer")
 
-
-
+// done
 function startQuiz() {
     console.log("started")
     startScreen.setAttribute("class", "hide")
-
-    // var timer = setInterval(function clock() {
-    //     document.getElementById("countdown").innerHTML = timeleft + "" +"seconds remaining";
-
-    //     timeleft -= 1;
-    //     if (timeleft <=0) {
-    //         clearInterval(timer);
-    //         document.getElementById("countdown").innerHTML = "Time is up!"
-    //     }
-    // }, 1000);
-   
+    timerCountdown.textContent = timer;
+    questionEl.removeAttribute("class")
+    timerId = setInterval(decreaseTime, 1000)
+    updateQuestion();
 };
+
+//finished this function
+function decreaseTime() {
+    timer -= 1;
+    timerCountdown.textContent = timer;
+    if (timer <= 0) {
+        endQuiz();
+    }
+}
+
+//end quiz function(needs to work on it)
+function endQuiz() {
+    //still need to add high score
+    clearInterval(timerId)
+    endScreen.removeAttribute("class")
+    questionEl.setAttribute("class", "hide")
+
+}
+
 function updateQuestion() {
     //the questions array object
      var currentQuestion = questions[questionNumber]
-     var questionEl = document.querySelector("#question");
-     questionEl.textContent = currentQuestion.question
      
+     questionEl.textContent = currentQuestion.question
+     answerList.innerHTML = "";
 
      //for loop answers on screen
      var answerEl = document.querySelector("#answers");
@@ -140,6 +157,22 @@ var startButton = document.querySelector("#start-btn")
 
 
 // get user info and check it or validate if correct
+function checkAnswer() {
+    if (this.value !== questions[questionNumber].correctAnswer) {
+        timer -= 15;
+        if (timer < 0) {
+            timer = 0
+        }
+        timerCountdown.textContent = timer;
+        
+        // playwrong sound effect
+
+        answerStatus.textContent = "Wrong Answer"
+    }
+    // if else true, play the right sound and say correct answer
+}
+
+
 
 // progress thru questions, conditionals. get score and store in localStorage
 updateQuestion()
