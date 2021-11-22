@@ -15,24 +15,48 @@ body {
   margin: 0 auto;
   display: flex;
   width: 100vw;
-  height: 100vw;
+  height: 118vw;
   justify-content: center;
   align-items: center;
 }
 
-.hide {
-  display: none;
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 80px;
 }
+
+a {
+  font-size: 1.6rem;
+  color: blanchedalmond;
+  padding: 0 10px;
+}
+
+#time,
+.timer-text {
+  color: aquamarine;
+  font-size: 1.6rem;
+}
+
+.timer {
+  padding: 10px;
+}
+
 .container {
   width: 800px;
   max-width: 90%;
-  padding: 10px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 9px;
   background-color: rgb(111, 119, 131);
 }
 
-#rules-container {
+.rules-container {
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: auto;
 }
 .rules-list {
   padding: 20px;
@@ -42,7 +66,7 @@ span {
   justify-content: center;
   font-size: 3rem;
   color: white;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .rules-list ul li {
@@ -56,27 +80,30 @@ span {
   font-size: 2rem;
   padding: 15px;
   border-radius: 10px;
+  background-color: #d46477;
 }
 
 .quiz-container {
   display: flex;
-  padding: 20px;
-}
-
-.timer-text,
-.timer-value {
-  font-size: 1.2rem;
-  color: aqua;
-  padding: 5px;
+  padding: 50px 20px;
 }
 
 #question {
   font-size: 2rem;
 }
 
-.choices-list ol {
-  font-size: 1.8rem;
+button {
+  font-size: 1.5rem;
 }
-li {
-  font-size: 1.8rem;
+
+/*#results-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 1.7rem;
+  padding: 20px;
+}*/
+
+.hide {
+  display: none;
 }
