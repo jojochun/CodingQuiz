@@ -96,13 +96,19 @@ button {
   font-size: 1.5rem;
 }
 
-/*#results-container {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  font-size: 1.7rem;
-  padding: 20px;
-}*/
+p,
+.gameover-text {
+  font-size: 2.3rem;
+}
+#initials-input {
+  font-size: 1.8rem;
+  padding: 5px;
+}
+#submit {
+  background-color: rgb(221, 105, 149);
+  padding: 8px;
+  border-radius: 8px;
+}
 
 .hide {
   display: none;

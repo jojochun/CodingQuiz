@@ -32,8 +32,8 @@ var questions = [{
 
 
 //Setting temporary timer
-//var timer = 1
-var timer = questions.length*15;
+//var timer = 10
+var timer = questions.length*10;
 
 var questionNumber = 0
 var timerId 
@@ -45,6 +45,7 @@ var answerList = document.getElementById("answers")
 var answerStatus = document.getElementById("check-answer")
 var questionScreen = document.getElementById("questions-container")
 var submitEl = document.getElementById("submit")
+
 
 // done
 function startQuiz() {
@@ -73,15 +74,22 @@ function endQuiz() {
     startScreen.setAttribute("class", "hide")
     endScreen.removeAttribute("class")
     questionEl.setAttribute("class", "hide")
-
+    questionScreen.setAttribute("class", "hide")
+   
 }
+
 
 // create and display questions
 // function that tells us which question we're on
 function updateQuestion() {
     //check to see if we've reached the end of the array, endQuiz
-    //the questions array object
+   
+     //the questions array object
      var currentQuestion = questions[questionNumber]
+     var questionsLength = questions.length
+     if (currentQuestion == questionsLength) {
+        endQuiz();
+     }
      
      questionEl.textContent = currentQuestion.question
      answerList.innerHTML = "";
@@ -128,11 +136,6 @@ function checkAnswer(event) {
 }
 
 
-
-
-
-
-
 //score and store in localStorage
 var saveScores = function() {
     var score = JSON.parse(localStorage.getItem("score")) || [];
@@ -146,9 +149,15 @@ var saveScores = function() {
     localStorage.setItem("score", JSON.stringify(score));
 };
 
- //get localStorage Scores
+//get localStorage Scores
 var loadScores = function() {
     score = JSON.parse(localStorage.getItem("score"));
+ // display scores
+ var scoreBoardEl = getElementBy("score-board")  
+ var scoresList = document.createElement("li");
+ scoresList.innerHTML = "<span>" + playerInfo.initials + "</span><h3>" + playerInfo.time + "</h3>",
+scoreBoardEl.appendChild(scoresList);
+
 };
 
 submitEl.addEventListener("click", saveScores)
