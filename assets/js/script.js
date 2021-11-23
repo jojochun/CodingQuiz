@@ -18,7 +18,7 @@ var questions = [{
 
 },{
     question:"Why do we need an alt attribute for images in an HTML document?",
-    answers: ["To identify the image","To access the image","To give context for the image"],
+    answers: ["To identify the image","To access the image","To give context for the image","To style the image"],
     correctAnswer: "To give context for the image"
 },{
     question:"Which CSS property do you use to align the flex container's items on the main-axis?",
@@ -85,10 +85,13 @@ function updateQuestion() {
     //check to see if we've reached the end of the array, endQuiz
    
      //the questions array object
-     var currentQuestion = questions[questionNumber]
-     var questionsLength = questions.length
-     if (currentQuestion == questionsLength) {
-        endQuiz();
+     var currentQuestion = questions[questionNumber];
+     var questionsLength = questions.length;
+     for (var i = 0; i < questions.length; i++) {
+
+        if (currentQuestion == questionsLength) 
+            endQuiz();
+     
      }
      
      questionEl.textContent = currentQuestion.question
@@ -113,7 +116,7 @@ var startButton = document.querySelector("#start-btn")
 
 
 
-// get user info and check it or validate if correct
+// get user answer and check/validate if correct
 function checkAnswer(event) {
     console.log(event.target.textContent)
     console.log(questions[questionNumber].correctAnswer)
@@ -147,6 +150,10 @@ var saveScores = function() {
     }
     score.push(playerInfo)
     localStorage.setItem("score", JSON.stringify(score));
+
+    // reset input field to blank after submit
+    document.getElementById("initials-input").value = "";
+
 };
 
 //get localStorage Scores
