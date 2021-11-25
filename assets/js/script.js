@@ -45,6 +45,7 @@ var answerList = document.getElementById("answers")
 var answerStatus = document.getElementById("check-answer")
 var questionScreen = document.getElementById("questions-container")
 var submitEl = document.getElementById("submit")
+var highScoreBtn = document.getElementsByTagName("a")
 
 
 // done
@@ -157,18 +158,35 @@ var saveScores = function () {
     // reset input field to blank after submit
     document.getElementById("initials-input").value = "";
 
+
 };
 
-//get localStorage Scores
+//*get localStorage Scores
 var loadScores = function () {
-    score = JSON.parse(localStorage.getItem("score"));
-    // display scores
-    var scoreBoardEl = getElementBy("score-board")
-    var scoresList = document.createElement("li");
-    scoresList.innerHTML = "<span>" + playerInfo.initials + "</span><h3>" + playerInfo.time + "</h3>",
-        scoreBoardEl.appendChild(scoresList);
+    var scoresData = JSON.parse(localStorage.getItem("score"));
+
+    // parse string to type = array
+    scoresData = JSON.parse(scoresData);
+
+    for (var i = 0; i < scoresData.length; i++); {
+
+
+
+        var scoreBoardEl = getElementById("score-board")
+        var scoreListEl = document.createElement("li");
+
+
+        scoreListEl.content = scoresData[i];
+
+        scoreBoardEl.appendChild(scoreListEl.content);
+
+        // sort list, descending order
+
+
+    }
 
 };
 
+/*highScoreBtn.addEventListener("click", loadScores)*/
 submitEl.addEventListener("click", saveScores)
 startButton.addEventListener("click", startQuiz)
