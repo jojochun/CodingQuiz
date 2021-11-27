@@ -48,6 +48,7 @@ var submitEl = document.getElementById("submit")
 var highScoreBtn = document.getElementsByTagName("a")
 
 
+
 // done
 function startQuiz() {
     console.log("started")
@@ -157,11 +158,12 @@ var saveScores = function () {
 
     // reset input field to blank after submit
     document.getElementById("initials-input").value = "";
+    window.location.href = "/score.html"
 
 
 };
 
-//*get localStorage Scores
+/* get localStorage Scores
 var loadScores = function () {
     var scoresData = JSON.parse(localStorage.getItem("score"));
 
@@ -180,13 +182,13 @@ var loadScores = function () {
 
         scoreBoardEl.appendChild(scoreListEl.content);
 
-        // sort list, descending order
+        // sort list, descending order:  scoresData.time.sort(function(a, b){return b-a});
 
 
     }
 
 };
+*/
 
-/*highScoreBtn.addEventListener("click", loadScores)*/
 submitEl.addEventListener("click", saveScores)
 startButton.addEventListener("click", startQuiz)
