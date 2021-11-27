@@ -146,7 +146,18 @@ function checkAnswer(event) {
 
 //score and store in localStorage
 var saveScores = function () {
-    var score = JSON.parse(localStorage.getItem("score")) || [];
+    var score = localStorage.getItem("score");
+
+    // validate empty score
+    if (!score) {
+        // make score object
+        score = []
+
+    } else {
+        score = JSON.parse(score)
+
+    }
+
     var initials = document.getElementById("initials-input")
 
     var playerInfo = {

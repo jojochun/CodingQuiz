@@ -1,5 +1,14 @@
 // load scores from localStorage
-var score = JSON.parse(localStorage.getItem("score")) || [];
+var score = localStorage.getItem("score");
+// parse the JSON string
+//validate the score here
+if (!score) {
+    score = {
+        initials: "",
+        time: ""
+    }
+}
+
 
 var scoreBoard = document.getElementById("player-info");
 
@@ -19,19 +28,18 @@ function redirect() {
 }
 
 // clear or reset the page
-function resetGame() {
-    score.length = 0;
-}
+
 
 // clear localStorage, possibly storage clear
 function clearScreen() {
     localStorage.setItem("score", "");
 
-    resetGame();
+
+
 }
 
 // 2. create a button to erase scores
-var clearBtn = document.getElementsByName("clear-btn")
+var clearBtn = document.getElementById("clear-btn")
 
 
 // add eventListener
