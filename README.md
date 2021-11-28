@@ -17,11 +17,8 @@ JavaScript
 
 https://jojochun.github.io/CodingQuiz/
 
-<<<<<<< HEAD
-=======
-![Screen Shot 2021-11-27 at 9 49 52 PM](https://user-images.githubusercontent.com/91582330/143734446-a90b4afa-a7b8-42af-a3ab-3d9b60933f7f.png)
+(https://user-images.githubusercontent.com/91582330/143734446-a90b4afa-a7b8-42af-a3ab-3d9b60933f7f.png)
 
->>>>>>> 88d0ce5ea99c8804db3f3f3b236d91c4e782de27
 ## CONTRIBUTION
 
 Made with ❤️ by Joanne Chun
