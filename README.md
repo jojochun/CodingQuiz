@@ -17,8 +17,6 @@ JavaScript
 
 https://jojochun.github.io/CodingQuiz/
 
-<img width="1208" alt="Screen Shot 2021-11-18 at 8 23 47 PM" src="https://user-images.githubusercontent.com/91582330/142575306-87be7567-7944-41d5-ac55-a08212fe0936.png">
-
 ## CONTRIBUTION
 
 Made with ❤️ by Joanne Chun
