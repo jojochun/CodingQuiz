@@ -3,10 +3,9 @@ var score = localStorage.getItem("score");
 // parse the JSON string
 //validate the score here
 if (!score) {
-    score = {
-        initials: "",
-        time: ""
-    }
+    score = []
+} else {
+    score = JSON.parse(score)
 }
 
 

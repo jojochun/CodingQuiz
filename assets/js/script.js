@@ -127,7 +127,7 @@ function checkAnswer(event) {
     console.log(questions[questionNumber].correctAnswer)
     if (event.target.textContent !== questions[questionNumber].correctAnswer) {
         console.log("wrong answer")
-        timer -= 15;
+        timer -= 10;
         if (timer < 0) {
             timer = 0
         }
@@ -147,7 +147,12 @@ function checkAnswer(event) {
 //score and store in localStorage
 var saveScores = function () {
     var score = localStorage.getItem("score");
+    var initials = document.getElementById("initials-input")
 
+    var playerInfo = {
+        time: timer,
+        initials: initials.value
+    }
     // validate empty score
     if (!score) {
         // make score object
@@ -158,12 +163,7 @@ var saveScores = function () {
 
     }
 
-    var initials = document.getElementById("initials-input")
 
-    var playerInfo = {
-        time: timer,
-        initials: initials.value
-    }
     score.push(playerInfo)
     localStorage.setItem("score", JSON.stringify(score));
 
