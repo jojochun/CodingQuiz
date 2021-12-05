@@ -169,7 +169,7 @@ var saveScores = function () {
 
     // reset input field to blank after submit
     document.getElementById("initials-input").value = "";
-    window.location.href = "/score.html"
+    window.location.href = "./score.html"
 
 
 };
